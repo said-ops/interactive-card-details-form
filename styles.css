@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'main font';
+    src: url(./fonts/SpaceGrotesk-VariableFont_wght.ttf) format('truetype');
+    font-weight: 400 500 600;
+}
+:root{
+    --input-error-color:hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet:hsl(270, 3%, 87%);
+    --dark-grayish-violet:hsl(279, 6%, 55%);
+    --font-size:18px;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+/*================start styling=====================*/
+/*================left section styling==================*/
+body{
+    font-family: 'main font';
+}
+main{
+    display: flex;
+}
+.left{
+    background: url(./images/bg-main-desktop.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    width: 483px;
+}
+.right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card-front,.card-back{
+    width:447px;
+    height:245px;
+}
+.card-front{
+    background: url(./images/bg-card-front.png);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+.card-logo{
+    flex: 1;
+}
+.card-number{
+    text-align: center;
+    color: var(--light-grayish-violet);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.card-infos{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--light-grayish-violet);
+}
+.card-back{
+    background: url(./images/bg-card-back.png);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.card-cvc{
+    transform: translateX(-3rem);
+    font-size: 15px;
+    color: var(--light-grayish-violet);
+    letter-spacing: 1px;
+}
+/*===============right section styling==============*/
+/*form width 395px*/
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 395px;
+    gap: 1rem;
+}
+.name,.number{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+input{
+    height: 48px;
+    border: 1px solid var(--light-grayish-violet);
+    outline: 0;
+    border-radius: 5px;
+    padding-left: 1rem;
+    font-family: 'main font';
+    font-size: 18px;
+    color:hsl(278, 68%, 11%) ;
+}
+::placeholder{
+    color: #abaaac;
+    font-weight: 500;
+    opacity: 0.5;
+}
+label{
+    color: hsl(278, 68%, 11%);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.date{
+    display: flex;
+}

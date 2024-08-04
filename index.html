@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <main>
+    <div class="left">
+      <div class="cards">
+        <div class="card-front">
+          <div class="card-logo">
+            <img src="./images/card-logo.svg" alt="card logo">
+          </div>
+          <div class="card-number">
+            0000&ThickSpace;0000&ThickSpace;0000&ThickSpace;0000
+          </div>
+          <div class="card-infos">
+            <div class="card-name">Jane Appleseed</div>
+            <div class="card-date"><span class="card-month">00</span>/<span class="card-year">00</span></div>
+          </div>
+        </div>
+        <div class="card-back">
+          <span class="card-cvc">000</span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="form-container">
+        <form novalidate>
+          <fieldset class="name">
+            <label for="name">Cardholder Name</label>
+            <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" maxlength="50">
+          </fieldset>
+          <fieldset class="number">
+            <label for="number">Card Number</label>
+            <input type="text" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+          </fieldset>
+          <fieldset class="inline">
+            <div class="date">
+              <div class="MM-YY">
+                <label for="month">Exp. Date (MM/YY)</label>
+                <input type="number" name="month" id="month" placeholder="MM" maxlength="2">
+                <input type="number" name="year" id="year" placeholder="YY" maxlength="2">
+              </div>
+              <div class="cvc">
+                <label for="cvc">CVC</label>
+                <input type="number" name="cvc" id="cvc" maxlength="2">
+              </div>
+            </div>
+          </fieldset>
+          <button class="confirm">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <!-- Completed state start -->
+  <!-- Thank you!
+  We've added your card details
+  Continue -->
+</body>
+</html>
