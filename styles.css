@@ -280,6 +280,7 @@ label{
     gap: 2rem;
     padding: 2rem;
     box-shadow: 4px 9px 17px 0px #6030d9;
+    border-radius: 10px;
 }
 .confirmation img{
     width: 80px;
@@ -296,10 +297,10 @@ label{
 }
 @media screen and (max-width:910px) {
     .confirmation{
-        transform: translate(0);
+        transform: translateY(-4rem);
         padding: 2rem;
     }
 }
-.form-container{
+.confirmation{
     display: none;
 }
