@@ -190,14 +190,14 @@ label{
     resize: none;
 }
 /*================form media queries==============*/
-@media screen and (max-width:1224px) {
+@media screen and (max-width:1257px) {
     .cards,
     .card-back,
     .form-container{
         transform: translateX(0);
     }
 }
-@media screen and (max-width:910px) {
+@media screen and (max-width:913px) {
     
     main{
         flex-direction: column;
@@ -218,7 +218,7 @@ label{
         transform: translateY(-18rem);
     }  
 }
-@media screen and (max-width:425px) {
+@media screen and (max-width:585px) {
     .form-container{
         padding: 1rem;
         transform: translateY(-4rem);
