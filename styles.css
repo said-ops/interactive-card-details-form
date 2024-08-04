@@ -304,3 +304,8 @@ label{
 .confirmation{
     display: none;
 }
+.error,
+.error-name,
+.error-number{
+    display: none;
+}
