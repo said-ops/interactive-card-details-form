@@ -71,40 +71,63 @@ document.addEventListener('DOMContentLoaded' , () => {
     attachEL();
     cardForm.addEventListener('submit', e => {
         e.preventDefault();
-        
+        let isValid = true;
         //name validate !empty
         if(!cardName.value){
             document.querySelector('.error-name').style.display = 'initial';
-            
+            isValid = false;
         }else{
             document.querySelector('.error-name').style.display = 'none';
+            isValid = true;
         }
         //number validate !empty
         if(!cardNumber.value || cardNumber.value.length != 19){
             document.querySelector('.error-number').style.display = 'initial';
-            
+            isValid = false;
         }else{
             document.querySelector('.error-number').style.display = 'none';
+            isValid = true;
         }//month validate !empty
         if(!month.value || !year.value){
             document.querySelector('.date .error').style.display = 'initial';
-            
+            isValid = false;
         }else if(parseInt(month.value) > 12 || parseInt(month.value) < 1){
             document.querySelector('.date .error').style.display = 'initial';
             document.querySelector('.date .error').textContent =  'Invalid Month';
+            isValid = false;
         }
         else if(parseInt(year.value) < 24 || parseInt(year.value) > 50 ){
             document.querySelector('.date .error').style.display = 'initial';
             document.querySelector('.date .error').textContent =  'Invalid Year';
+            isValid = false;
         }
         else{
             document.querySelector('.date .error').style.display = 'none';
+            isValid = true;
         }//cvc validate !empty
         if(!cvc.value){
             document.querySelector('.cvc .error').style.display = 'initial';
-            return;
+            isValid = false;
         }else{
             document.querySelector('.cvc .error').style.display = 'none';
+            isValid = true;
+        }
+        if(!isValid){
+            return;
+        }
+        else{
+            //display complete step 
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector('.confirmation').style.display = 'flex';  
+            document.querySelector('.confirmation .confirm').addEventListener('click' , ()=>{
+                document.querySelector('.form-container').style.display = 'flex';
+                document.querySelector('.confirmation').style.display = 'none';
+                cardName.value ='';
+                cardNumber.value ='';
+                month.value ='';
+                year.value ='';
+                cvc.value ='';
+            });  
         }
     });
     
