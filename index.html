@@ -35,32 +35,38 @@
           <fieldset class="name">
             <label for="name">Cardholder Name</label>
             <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" maxlength="50">
+            <span class="error-name">Name can't be empty</span>
           </fieldset>
           <fieldset class="number">
             <label for="number">Card Number</label>
             <input type="text" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+            <span class="error-number">Wrong format, numbers only</span>
           </fieldset>
           <fieldset class="inline">
             <div class="date">
-              <div class="MM-YY">
-                <label for="month">Exp. Date (MM/YY)</label>
-                <input type="number" name="month" id="month" placeholder="MM" maxlength="2">
-                <input type="number" name="year" id="year" placeholder="YY" maxlength="2">
+              <label for="month">Exp. Date (MM/YY)</label>
+              <div class="date-inputs">
+                <input type="text" name="month" id="month" placeholder="MM" maxlength="2">
+                <input type="text" name="year" id="year" placeholder="YY" maxlength="2">
               </div>
-              <div class="cvc">
-                <label for="cvc">CVC</label>
-                <input type="number" name="cvc" id="cvc" maxlength="2">
-              </div>
+              <span class="error">Can't be blank</span>
+            </div>
+            <div class="cvc">
+              <label for="cvc">CVC</label>
+              <input type="text" name="cvc" id="cvc" placeholder="e.g 123" maxlength="3">
+              <span class="error">Can't be blank</span>
             </div>
           </fieldset>
-          <button class="confirm">Confirm</button>
+          <button class="confirm" id="confirm">Confirm</button>
         </form>
+      </div>
+      <div class="confirmation">
+        <img src="./images/icon-complete.svg" alt="completed icon">
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button class="confirm">Continue</button>
       </div>
     </div>
   </main>
-  <!-- Completed state start -->
-  <!-- Thank you!
-  We've added your card details
-  Continue -->
 </body>
 </html>

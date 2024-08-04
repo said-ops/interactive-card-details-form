@@ -14,6 +14,13 @@
 *::after,
 *::before{
     box-sizing: border-box;
+    transition: all 0.7s ease;
+}
+input::-webkit-inner-spin-button{
+    display: none;
+}
+::selection{
+    background-color:#6030d9
 }
 /*================start styling=====================*/
 /*================left section styling==================*/
@@ -30,6 +37,7 @@ main{
     align-items: center;
     height: 900px;
     width: 483px;
+    background-size: cover;
 }
 .right{
     flex: 1;
@@ -45,6 +53,8 @@ main{
 .card-front,.card-back{
     width:447px;
     height:245px;
+    box-shadow: 0px 0px 20px 0px #6030d9;
+    border-radius: 10px;
 }
 .card-front{
     background: url(./images/bg-card-front.png);
@@ -88,8 +98,8 @@ main{
 form{
     display: flex;
     flex-direction: column;
-    max-width: 395px;
-    gap: 1rem;
+    width: 395px;
+    gap: 2rem;
 }
 .name,.number{
     display: flex;
@@ -105,6 +115,10 @@ input{
     font-family: 'main font';
     font-size: 18px;
     color:hsl(278, 68%, 11%) ;
+    font-weight: 500;
+}
+input:focus{
+    border: 1px solid #220930;
 }
 ::placeholder{
     color: #abaaac;
@@ -118,6 +132,174 @@ label{
     font-size: 13px;
     letter-spacing: 2px;
 }
-.date{
+.inline,.date-inputs{
     display: flex;
+}
+.date-inputs{
+    gap: 0.5rem;
+}
+.inline{
+    gap: 1rem;
+}
+.date,.cvc{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.cvc{
+    width: calc(395px - (170px + 1.5rem));
+}
+.date input{
+    width: 85px;
+}
+.confirm{
+    height: 48px;
+    background-color: #220930;
+    color: var(--white);
+    font-family: 'main font';
+    border: 0;
+    font-size: var(--font-size);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.confirm:hover{
+    background-color: #6030d9;
+}
+.error,
+.error-name,
+.error-number{
+    color: var(--input-error-color);
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 600;
+}
+.cards{
+    transform: translateX(9rem);
+}
+.card-back{
+    transform: translateX(6.5rem);
+}
+.form-container{
+        transform:translateX(4.5rem);
+        background-color: white;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 4px 9px 17px 0px #6030d9;
+}
+.inline input{
+    resize: none;
+}
+/*================form media queries==============*/
+@media screen and (max-width:1224px) {
+    .cards,
+    .card-back,
+    .form-container{
+        transform: translateX(0);
+    }
+}
+@media screen and (max-width:910px) {
+    
+    main{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .left{
+        width: 100%;
+        align-items:start;
+        padding-top: 6rem;
+    }
+    .card-front{
+        transform: translateX(8.5rem);
+    }
+    .card-back{
+        transform: translateX(-8.5rem);
+    }
+    .form-container{
+        transform: translateY(-18rem);
+    }  
+}
+@media screen and (max-width:425px) {
+    .form-container{
+        padding: 1rem;
+        transform: translateY(-4rem);
+        background-color: white;
+        width: 100%;
+    }
+    form{
+        width: 100%;
+    }
+    .cards{
+        width: 100%;
+    }
+    .card-front,
+    .card-back{
+        transform: translateX(0);
+        width: 282px;
+    align-self: center;
+    height: 150px;
+    background-size: cover;
+    }
+    .card-front{
+        transform: translate(-3rem,5rem);
+        z-index: 2;
+        padding: 1rem;
+        gap: 1rem;
+    height: auto;
+    }
+    .card-back{
+        transform: translateY(-13.3rem);
+    }
+    .left{
+        background: url(./images/bg-main-mobile.png);
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    fieldset,.inline input{
+        width: 100%;
+    }
+    .card-number{
+        font-size: 1.4rem;
+    }
+    main{
+        gap: 0;
+    }
+}
+@media screen and (max-width:375px) {
+    .card-front{
+        transform: translate(-1rem,5rem);
+    }
+}
+/*==============complete section=============*/
+.confirmation{
+    width: 395px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(4.5rem);
+    gap: 2rem;
+    padding: 2rem;
+    box-shadow: 4px 9px 17px 0px #6030d9;
+}
+.confirmation img{
+    width: 80px;
+    align-self: center;
+}
+.confirmation h2{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.confirmation p{
+    color: var(--dark-grayish-violet);
+}
+@media screen and (max-width:910px) {
+    .confirmation{
+        transform: translate(0);
+        padding: 2rem;
+    }
+}
+.form-container{
+    display: none;
 }
