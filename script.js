@@ -55,38 +55,49 @@ function attachEL (){
       });
     //month display
     month.addEventListener('input', e => {
-        e.target.value.replace(/[^0-9]/g, '');
+        e.target.value= e.target.value.replace(/[^0-9]/g, '');
         monthOutput.textContent =e.target.value;
     }); 
     year.addEventListener('input', e => {
+        e.target.value= e.target.value.replace(/[^0-9]/g, '');
         yearOutput.textContent = e.target.value;
     }) ;
     cvc.addEventListener('input' , e => {
+        e.target.value= e.target.value.replace(/[^0-9]/g, '');
         cvcOutput.textContent = e.target.value;
     })
 }
 document.addEventListener('DOMContentLoaded' , () => {
+    attachEL();
     cardForm.addEventListener('submit', e => {
         e.preventDefault();
         
         //name validate !empty
         if(!cardName.value){
             document.querySelector('.error-name').style.display = 'initial';
-            return;
+            
         }else{
             document.querySelector('.error-name').style.display = 'none';
         }
         //number validate !empty
         if(!cardNumber.value || cardNumber.value.length != 19){
             document.querySelector('.error-number').style.display = 'initial';
-            return;
+            
         }else{
             document.querySelector('.error-number').style.display = 'none';
         }//month validate !empty
-        if(!month.value || !year.value || parseInt(month.value) > 12 || parseInt(month.value) < 1 || parseInt(year.value) < 24){
+        if(!month.value || !year.value){
             document.querySelector('.date .error').style.display = 'initial';
-            return;
-        }else{
+            
+        }else if(parseInt(month.value) > 12 || parseInt(month.value) < 1){
+            document.querySelector('.date .error').style.display = 'initial';
+            document.querySelector('.date .error').textContent =  'Invalid Month';
+        }
+        else if(parseInt(year.value) < 24 || parseInt(year.value) > 50 ){
+            document.querySelector('.date .error').style.display = 'initial';
+            document.querySelector('.date .error').textContent =  'Invalid Year';
+        }
+        else{
             document.querySelector('.date .error').style.display = 'none';
         }//cvc validate !empty
         if(!cvc.value){
@@ -96,5 +107,5 @@ document.addEventListener('DOMContentLoaded' , () => {
             document.querySelector('.cvc .error').style.display = 'none';
         }
     });
-    attachEL();
+    
 });
