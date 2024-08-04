@@ -76,14 +76,16 @@ document.addEventListener('DOMContentLoaded' , () => {
         if(!cardName.value){
             document.querySelector('.error-name').style.display = 'initial';
             isValid = false;
+            return;
         }else{
             document.querySelector('.error-name').style.display = 'none';
             isValid = true;
         }
         //number validate !empty
-        if(!cardNumber.value || cardNumber.value.length != 19){
+        if(!cardNumber.value || parseInt(cardNumber.value.length) != 19){
             document.querySelector('.error-number').style.display = 'initial';
             isValid = false;
+            return;
         }else{
             document.querySelector('.error-number').style.display = 'none';
             isValid = true;
@@ -91,15 +93,18 @@ document.addEventListener('DOMContentLoaded' , () => {
         if(!month.value || !year.value){
             document.querySelector('.date .error').style.display = 'initial';
             isValid = false;
+            return;
         }else if(parseInt(month.value) > 12 || parseInt(month.value) < 1){
             document.querySelector('.date .error').style.display = 'initial';
             document.querySelector('.date .error').textContent =  'Invalid Month';
             isValid = false;
+            return;
         }
         else if(parseInt(year.value) < 24 || parseInt(year.value) > 50 ){
             document.querySelector('.date .error').style.display = 'initial';
             document.querySelector('.date .error').textContent =  'Invalid Year';
             isValid = false;
+            return;
         }
         else{
             document.querySelector('.date .error').style.display = 'none';
@@ -108,6 +113,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         if(!cvc.value){
             document.querySelector('.cvc .error').style.display = 'initial';
             isValid = false;
+            return;
         }else{
             document.querySelector('.cvc .error').style.display = 'none';
             isValid = true;
@@ -115,7 +121,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         if(!isValid){
             return;
         }
-        else{
+        else if(isValid){
             //display complete step 
             document.querySelector('.form-container').style.display = 'none';
             document.querySelector('.confirmation').style.display = 'flex';  
@@ -127,6 +133,11 @@ document.addEventListener('DOMContentLoaded' , () => {
                 month.value ='';
                 year.value ='';
                 cvc.value ='';
+                numberOutput.textContent='0000 0000 0000 0000';
+                nameOutput.textContent='jane appleseed';
+                monthOutput.textContent='00';
+                yearOutput.textContent='00';
+                cvcOutput.textContent='000';
             });  
         }
     });

@@ -210,13 +210,14 @@ label{
         padding-top: 6rem;
     }
     .card-front{
-        transform: translateX(8.5rem);
+        z-index: 2;
+        transform: translatey(12.5rem);
     }
     .card-back{
-        transform: translateX(-8.5rem);
+        transform: translatey(-13.6rem);
     }
     .form-container{
-        transform: translateY(-18rem);
+        transform: translateY(-23rem);
     }  
 }
 @media screen and (max-width:585px) {
@@ -241,7 +242,7 @@ label{
         background-size: cover;
     }
     .card-front{
-        transform: translate(-3rem,5rem);
+        transform: translate(-3rem,3.3rem);
         z-index: 2;
         padding: 1rem;
         gap: 1rem;
